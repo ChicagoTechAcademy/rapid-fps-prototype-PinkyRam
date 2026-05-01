@@ -56,3 +56,8 @@ void AFPSProjectile::Tick(float DeltaTime)
 
 }
 
+void AFPSProjectile::FireInDirection(const FVector& ShootDirection)
+{
+
+}
+
