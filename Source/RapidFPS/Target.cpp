@@ -4,6 +4,7 @@
 #include "Target.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/SphereComponent.h"
+#include "FPSProjectile.h"
 
 // Sets default values
 ATarget::ATarget()
@@ -43,6 +44,13 @@ void ATarget::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitive
 	{
 		// Handle logic here, e.g., print the name of the hit actor
 //		UE_LOG(LogTemp, Warning, TEXT("Hit: %s"), OtherActor->GetName());
+
+		AFPSProjectile* projectile = Cast<AFPSProjectile>(OtherActor);
+
+		if (projectile)
+		{
+			Destroy();
+		}
 
 	}
 
